@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Confirm your age</title>
+</head>
+<body>
+	<form action="/" method="get" name="myForm" onsubmit="document.querySelector('form').action = '/' + document.querySelector('#fage').value;">
+		<label for="fage">Age:</label>
+		<input type="number" id="fage" name="fage"><br><br>
+		<input type="submit" value="Send form data!">
+	</form>
+	<!--Elements for submitting the user's age-->
+</body>
+</html>
