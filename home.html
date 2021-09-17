@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome!</title>
+	<style>
+		html {
+			font-family: Helvetica;
+			font-size:   24px;
+		}
+		label{
+            text-align: center;
+        }
+        #name{ 
+            transition: width ease-in-out; 
+			transition: all 0.5s;
+            width: 165px;
+            height: 32px;
+            padding: 3px 10px;
+			margin: 0 0.5ch;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-family:Helvetica;
+            font-size: 24px;    
+        }   		
+     	#name:invalid{
+            background-color: pink;
+        }
+        #name:focus{
+            width: 330px;
+        }		
+		#submitButton {
+		  	padding: 0 3ch;
+		  	height: 28px;
+		  	border-radius: 4px;
+			font-family: Helvetica;
+		  	font-size: 18px;
+		  	margin: 4px 0.5ch;
+		}
+		.flex-container{
+			display: flex;
+			position: absolute;
+			left: 50%;
+			top: 0%;
+			transform: translate(-50%, 0%);
+			padding: 10px;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin:6px 2px;
+			position: absolute;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- form asks for ('name') and sends it to index.js -->
+	<form action="/submit"  name="myForm" id="name_form" method="GET">
+		<div class="flex-container">
+			<label for="name">Please enter your name to continue</label>
+			<input type="text" id="name" name="name" required>
+			<input type="submit" value="Send!" id="submitButton">
+		</div>
+	</form>
+	<!-- script listens to #name_form for the action submit, and when that happens it saves #name and appends the value of it to the URL -->
+	<script type="text/javascript">
+		let name_form = document.getElementById("name_form");
+		let fname = document.getElementById('name');
+		name_form.addEventListener("submit", e => {
+		e.preventDefault()
+		window.location.href += fname.value;
+		});
+	</script>
+
+
+</body>
+</html>

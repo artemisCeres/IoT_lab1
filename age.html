@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Confirm your age</title>
+	<style>
+		html {
+			font-family: Helvetica;
+			font-size:   24px;
+		}
+		label{
+            text-align: center;
+        }
+        #age{ 
+            width: 5ch;
+            height: 32px;
+            padding: 3px 10px;
+			margin: 0 0.5ch;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-family:Helvetica;
+            font-size: 24px;    
+        }   		
+     	#age:invalid{
+            background-color: pink;
+        }		
+		#submitButton {
+		  	padding: 0 3ch;
+		  	height: 28px;
+		  	border-radius: 4px;
+			font-family: Helvetica;
+		  	font-size: 18px;
+		  	margin: 4px 0.5ch;
+		}
+		.flex-container{
+			display: flex;
+			position: absolute;
+			left: 50%;
+			top: 0%;
+			transform: translate(-50%, 0%);
+			padding: 10px;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin:6px 2px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<!-- form asks for ('age') and sends it to index.js -->
+	<form method="get">
+		<div class="flex-container">	
+			<label for="age">Please enter your age to continue:</label>
+			<input type="number" id="age" name="age" required>
+			<input type="submit" id = "submitButton" value="Send!">
+		</div>
+	</form>
+</body>
+</html>
