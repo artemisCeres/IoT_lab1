@@ -5,11 +5,22 @@
 	<title>Welcome!</title>
 </head>
 <body>
-	<form action="/" method="get" name="myForm" onsubmit="document.querySelector('form').action = '/' + document.querySelector('#fname').value;" method="POST" action="age.html">
-		<label for="fname">First name:</label>
-		<input type="text" id="fname" name="fname"><br><br>
-	   	<input type="submit" value="Send form data!">
-	 	</form>
-	<!--Elements and scripts for submitting a name-->
+	<!-- form asks for ('name') and sends it to index.js -->
+	<form action="/submit"  name="myForm" id="name_form" method="GET">
+			<label for="name">Please enter your name to continue</label>
+			<input type="text" id="name" name="name">
+			<input type="submit" value="Send!" id="submitButton">
+	</form>
+	<!-- script listens to #name_form for the action submit, and when that happens it saves #name and appends the value of it to the URL -->
+	<script type="text/javascript">
+		let name_form = document.getElementById("name_form");
+		let fname = document.getElementById('name');
+		name_form.addEventListener("submit", e => {
+		e.preventDefault()
+		window.location.href += fname.value;
+		});
+	</script>
+
+
 </body>
 </html>
